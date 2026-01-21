@@ -7,7 +7,7 @@ This repo contains a single Jupyter notebook that trains a **Naive Bayes** class
 - **Notebook**: `IncomePrediction-NaiveBayes.ipynb`
 - **Dataset archive**: `adult.zip` (unzips to `adult.data`, `adult.test`, and metadata files)
 
-### Approach (as implemented in the notebook)
+### Approach
 
 - **Data loading**: reads `adult.data` (train) and `adult.test` (test), then concatenates for preprocessing.
 - **Preprocessing**:
@@ -23,7 +23,7 @@ This repo contains a single Jupyter notebook that trains a **Naive Bayes** class
   - 10-fold stratified cross-validation
   - Null-accuracy comparison
 
-### Results (example run from the notebook)
+### Results
 
 On the provided `adult.test` split:
 
@@ -45,7 +45,7 @@ You’ll need Python + Jupyter, plus these libraries (as used by the notebook):
 - `scikit-learn`
 - `imbalanced-learn`
 
-Install (example):
+Install:
 
 ```bash
 pip install numpy pandas matplotlib seaborn scikit-learn imbalanced-learn jupyter
@@ -64,8 +64,3 @@ unzip adult.zip
 ```
 
 If `unzip` isn’t available on your machine, extract `adult.zip` using your OS tools, then rerun the notebook.
-
-### Notes / caveats
-
-- The notebook uses `LabelEncoder` on multiple categorical columns (including non-ordinal categories). This is **exactly what the current implementation does**, but it may not be the best encoding choice for Naive Bayes; one-hot encoding is a common alternative.
-- The notebook concatenates train + test before encoding. This avoids “unknown category” issues at test time, but it also means the preprocessing “sees” test categories during fitting.
