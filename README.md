@@ -1,18 +1,18 @@
 ## Income Prediction — Adult Census Income
 
-This repo contains a single Jupyter notebook that trains a **Naive Bayes** classifier to predict whether a person earns **\> \$50K/year** using the **UCI Adult (Census Income)** dataset.
+This repo contains a single Jupyter notebook that trains a **Naive Bayes** classifier to predict whether a person earns **\> \$50K/year** using the **UCI Adult Census Income** dataset.
 
 ### What’s inside
 
 - **Notebook**: `IncomePrediction-NaiveBayes.ipynb`
-- **Dataset archive**: `adult.zip` (unzips to `adult.data`, `adult.test`, and metadata files)
+- **Dataset archive**: `adult.zip`
 
 ### Approach
 
-- **Data loading**: reads `adult.data` (train) and `adult.test` (test), then concatenates for preprocessing.
+- **Data loading**: reads `adult.data`, for training and `adult.test`, for test, then concatenates for preprocessing.
 - **Preprocessing**:
   - Label-encodes all categorical columns using `LabelEncoder`
-  - Drops `fnlwgt` and `education` (keeps `education_num`)
+  - Drops `fnlwgt` and `education`
   - Scales features with `MinMaxScaler`
 - **Imbalance handling**: applies **SMOTE** to the scaled training split
 - **Model**: `GaussianNB`
@@ -30,13 +30,13 @@ On the provided `adult.test` split:
 - **Accuracy**: ~0.8199  
 - **ROC-AUC**: ~0.8547  
 
-10-fold CV (on full dataset):
+10-fold CV:
 
-- **Mean accuracy**: ~0.7991 (range ~0.7920–0.8061)
+- **Mean accuracy**: ~0.7991
 
 ### Requirements
 
-You’ll need Python + Jupyter, plus these libraries (as used by the notebook):
+You’ll need Python + Jupyter, plus these libraries:
 
 - `numpy`
 - `pandas`
