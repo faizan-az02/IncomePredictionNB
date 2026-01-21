@@ -1,4 +1,4 @@
-## Income Prediction (Naive Bayes) — Adult Census Income
+## Income Prediction — Adult Census Income
 
 This repo contains a single Jupyter notebook that trains a **Naive Bayes** classifier to predict whether a person earns **\> \$50K/year** using the **UCI Adult (Census Income)** dataset.
 
